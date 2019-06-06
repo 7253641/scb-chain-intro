@@ -14,31 +14,21 @@ import SCBWord from "../components/SCBWord";
 import WordCardGrid from "../components/WordCardGrid";
 import "typeface-roboto";
 import StartButton from "../components/StartButton";
-function MadeWithLove() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"杭州润歌网络有限公司 "}
-      {/* <MuiLink color="inherit" href="https://material-ui.com/">
-        Material-UI
-      </MuiLink> */}
-      {" 技术支持"}
-    </Typography>
-  );
-}
+import MadeWithLove from "../components/MadeWithLove";
 
 export default function App() {
   return (
     <>
       <CssBaseline />
-      <TopAppBar />
+      <TopAppBar title="区块链学分银行" />
       <HeroUnit />
       <Container maxWidth="lg">
         <Box my={3}>
           {/* <ProTip /> */}
           <WordCardGrid />
           {/* <Link to="/about" color="secondary">
-          Go to the about page
-        </Link> */}
+            Go to the about page
+          </Link> */}
           <Grid container spacing={2} justify="center">
             <Grid item>
               <StartButton />

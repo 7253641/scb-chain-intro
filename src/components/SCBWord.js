@@ -5,7 +5,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-
+import { Link } from "gatsby";
 const useStyles = makeStyles({
   card: {
     minWidth: 275
@@ -26,7 +26,8 @@ const useStyles = makeStyles({
 export default function SCBWord() {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
-
+  //{/* declare pathways */}
+  const TopicsLink = props => <Link to="/scbtopic" {...props} />;
   return (
     <Card className={classes.card}>
       <CardContent>
@@ -46,7 +47,9 @@ export default function SCBWord() {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">了解更多</Button>
+        <Button size="small" component={TopicsLink}>
+          了解更多
+        </Button>
       </CardActions>
     </Card>
   );

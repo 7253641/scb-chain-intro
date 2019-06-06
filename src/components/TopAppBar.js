@@ -6,6 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import { Link } from "gatsby";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -19,9 +20,10 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function TopAppBar() {
+export default function TopAppBar(props) {
   const classes = useStyles();
-
+  const { title } = props;
+  const HomeLink = props => <Link to="/" {...props} />;
   return (
     <div className={classes.root}>
       <AppBar position="relative">
@@ -31,11 +33,12 @@ export default function TopAppBar() {
             className={classes.menuButton}
             color="inherit"
             aria-label="Menu"
+            component={HomeLink}
           >
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" color="inherit" noWrap>
-            学分银行 + 区块链
+            {title}
           </Typography>
           {/* <Button color="inherit">登陆</Button> */}
         </Toolbar>

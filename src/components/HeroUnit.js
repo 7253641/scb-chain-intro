@@ -65,7 +65,7 @@ export default function HeroUnit() {
               color="textPrimary"
               gutterBottom
             >
-              构建区块链信用 引领未来世界
+              区块链学分银行
             </Typography>
             <Typography
               variant="h5"
