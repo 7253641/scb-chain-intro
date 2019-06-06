@@ -75,15 +75,12 @@ function SCIntro() {
           </Toolbar>
         </AppBar>
         <List className={classes.root}>
-          <ListItem alignItems="center">
+          <ListItem>
             <SCProTip />
           </ListItem>
-          <ListItem alignItems="center">
-            {/* <ListItemAvatar>
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-            </ListItemAvatar> */}
+          <ListItem>
             <ListItemIcon>
-              <StarIcon color="inherit" />
+              <StarIcon />
             </ListItemIcon>
             <ListItemText
               primary="非对称加密"
@@ -103,12 +100,9 @@ function SCIntro() {
             />
           </ListItem>
           <Divider variant="inset" component="li" />
-          <ListItem alignItems="center">
-            {/* <ListItemAvatar>
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/3.jpg" />
-            </ListItemAvatar> */}
+          <ListItem>
             <ListItemIcon>
-              <StarIcon color="inherit" />
+              <StarIcon />
             </ListItemIcon>
             <ListItemText
               primary="哈希算法"
@@ -128,12 +122,9 @@ function SCIntro() {
             />
           </ListItem>
           <Divider variant="inset" component="li" />
-          <ListItem alignItems="center">
-            {/* <ListItemAvatar>
-              <Avatar alt="Remy Sharp" src="static/images/avatar/star.jpg" />
-            </ListItemAvatar> */}
+          <ListItem>
             <ListItemIcon>
-              <StarIcon color="inherit" />
+              <StarIcon />
             </ListItemIcon>
             <ListItemText
               primary="共识机制"
@@ -153,13 +144,9 @@ function SCIntro() {
             />
           </ListItem>
           <Divider variant="inset" component="li" />
-
-          <ListItem alignItems="center">
-            {/* <ListItemAvatar>
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/3.jpg" />
-            </ListItemAvatar> */}
+          <ListItem>
             <ListItemIcon>
-              <StarIcon color="inherit" />
+              <StarIcon />
             </ListItemIcon>
             <ListItemText
               primary="智能合约"
@@ -180,12 +167,9 @@ function SCIntro() {
           </ListItem>
           <Divider variant="inset" component="li" />
 
-          <ListItem alignItems="center">
-            {/* <ListItemAvatar>
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/3.jpg" />
-            </ListItemAvatar> */}
+          <ListItem>
             <ListItemIcon>
-              <StarIcon color="inherit" />
+              <StarIcon />
             </ListItemIcon>
             <ListItemText
               primary="匿名性"

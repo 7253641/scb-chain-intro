@@ -20,7 +20,7 @@ export default function App() {
   return (
     <>
       <CssBaseline />
-      <TopAppBar title="区块链学分银行" />
+      <TopAppBar title="首页" />
       <HeroUnit />
       <Container maxWidth="lg">
         <Box my={3}>

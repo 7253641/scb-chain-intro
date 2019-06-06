@@ -80,9 +80,6 @@ function BCTINtro() {
             <BCTProTip />
           </ListItem>
           <ListItem alignItems="center">
-            {/* <ListItemAvatar>
-              <Avatar alt="Remy Sharp" src="static/images/avatar/star.jpg" />
-            </ListItemAvatar> */}
             <ListItemIcon>
               <StarIcon color="inherit" />
             </ListItemIcon>

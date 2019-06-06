@@ -16,8 +16,11 @@ export default function App() {
       <TopAppBar title="学分银行" />
       <Container maxWidth="sm">
         <Box my={4}>
-          <Typography variant="h4" component="h1" gutterBottom>
-            Gatsby v4-beta example
+          <Typography variant="h4" component="h1" gutterBottom align="center">
+            学分银行
+          </Typography>
+          <Typography variant="h6" component="h1" gutterBottom align="center">
+            学分银行
           </Typography>
           <Link to="/">Go to the main page</Link>
           <ProTip />

@@ -19,5 +19,6 @@ module.exports = {
     title: "区块链 + 学分银行",
     description: `致力于教育产业链`,
     author: `@ZhangTao`
-  }
+  },
+  pathPrefix: "/scb-chain-intro"
 };
