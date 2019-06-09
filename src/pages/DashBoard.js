@@ -112,7 +112,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function SCBBCTopic() {
+export default function Dashboard() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
@@ -125,7 +125,9 @@ export default function SCBBCTopic() {
   const HomeLink = props => <Link to="/" {...props} />;
   const UserLink = props => <Link to="/User" {...props} />;
   const CourseLink = props => <Link to="/Course" {...props} />;
+  const Steppers = props => <Link to="/Steppers" {...props} />;
   const CreditLink = props => <Link to="/Credit" {...props} />;
+  const DashBoardLink = props => <Link to="/DashBoard" {...props} />;
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -153,7 +155,7 @@ export default function SCBBCTopic() {
             noWrap
             className={classes.title}
           >
-            学分银行 + 区块链
+            数字仪表盘
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -191,7 +193,7 @@ export default function SCBBCTopic() {
               </ListItemIcon>
               <ListItemText primary="已选课程" />
             </ListItem>
-            <ListItem button>
+            <ListItem button component={Steppers}>
               <ListItemIcon>
                 <BarChartIcon />
               </ListItemIcon>
@@ -203,7 +205,7 @@ export default function SCBBCTopic() {
               </ListItemIcon>
               <ListItemText primary="证书认证" />
             </ListItem>
-            <ListItem button component={CreditLink}>
+            <ListItem button component={DashBoardLink}>
               <ListItemIcon>
                 <DashboardIcon />
               </ListItemIcon>

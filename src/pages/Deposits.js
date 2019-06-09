@@ -15,7 +15,7 @@ const useStyles = makeStyles({
 export default function Deposits() {
   const classes = useStyles();
   return (
-    <React.Fragment>
+    <>
       <Title>学分余额</Title>
       <Typography component="p" variant="h4">
         1,024.00
@@ -24,10 +24,10 @@ export default function Deposits() {
         截止 2019年6月9日
       </Typography>
       <div>
-        <Link color="primary" href="javascript:;">
-          View balance
+        <Link color="primary" href="https://eostracker.io/" target="_blank">
+          区块链浏览器
         </Link>
       </div>
-    </React.Fragment>
+    </>
   );
 }

@@ -15,21 +15,19 @@ function createData(time, amount) {
 }
 
 const data = [
-  createData("00:00", 0),
-  createData("03:00", 300),
-  createData("06:00", 600),
-  createData("09:00", 800),
-  createData("12:00", 1500),
-  createData("15:00", 2000),
-  createData("18:00", 2400),
-  createData("21:00", 2400),
-  createData("24:00", undefined)
+  createData("周一", 80),
+  createData("周二", 300),
+  createData("周三", 240),
+  createData("周四", 540),
+  createData("周五", 550),
+  createData("周六", 300),
+  createData("周日", 240)
 ];
 
 export default function Chart() {
   return (
     <React.Fragment>
-      <Title>Today</Title>
+      <Title>本周学习时长</Title>
       <ResponsiveContainer>
         <LineChart
           data={data}
@@ -43,10 +41,10 @@ export default function Chart() {
           <XAxis dataKey="time" />
           <YAxis>
             <Label angle={270} position="left" style={{ textAnchor: "middle" }}>
-              Sales ($)
+              时长 (分钟)
             </Label>
           </YAxis>
-          <Line type="monotone" dataKey="amount" stroke="#556CD6" dot={false} />
+          <Line type="monotone" dataKey="amount" stroke="#556CD6" dot={true} />
         </LineChart>
       </ResponsiveContainer>
     </React.Fragment>

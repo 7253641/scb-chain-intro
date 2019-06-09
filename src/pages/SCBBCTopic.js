@@ -11,9 +11,15 @@ import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import Badge from "@material-ui/core/Badge";
 import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import NotificationsIcon from "@material-ui/icons/Notifications";
+// import { mainListItems, secondaryListItems, closeListItems } from "./listItems";
+import Chart from "./Chart";
+import Deposits from "./Deposits";
+import Orders from "./Orders";
 import MadeWithLove from "../components/MadeWithLove";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -25,9 +31,8 @@ import LayersIcon from "@material-ui/icons/Layers";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import CloseIcon from "@material-ui/icons/Close";
 import { Link } from "gatsby";
-import CreditInfo from "./CreditInfo";
-
 const drawerWidth = 240;
+
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex"
@@ -107,14 +112,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Credit() {
-  const HomeLink = props => <Link to="/" {...props} />;
-  const UserLink = props => <Link to="/User" {...props} />;
-  const CourseLink = props => <Link to="/Course" {...props} />;
-  const CreditLink = props => <Link to="/Credit" {...props} />;
-  const Steppers = props => <Link to="/Steppers" {...props} />;
-  const DashBoardLink = props => <Link to="/DashBoard" {...props} />;
-
+export default function SCBBCTopic() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
@@ -123,8 +121,13 @@ export default function Credit() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  // const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
-
+  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  const HomeLink = props => <Link to="/" {...props} />;
+  const UserLink = props => <Link to="/User" {...props} />;
+  const CourseLink = props => <Link to="/Course" {...props} />;
+  const CreditLink = props => <Link to="/Credit" {...props} />;
+  const DashBoardLink = props => <Link to="/DashBoard" {...props} />;
+  const Steppers = props => <Link to="/Steppers" {...props} />;
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -152,7 +155,7 @@ export default function Credit() {
             noWrap
             className={classes.title}
           >
-            证书认证
+            数字仪表盘
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -175,6 +178,7 @@ export default function Credit() {
         </div>
         <Divider />
         <List>
+          {" "}
           <div>
             <ListItem button component={UserLink}>
               <ListItemIcon>
@@ -220,8 +224,27 @@ export default function Credit() {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
-        <Container maxWidth="xl" justify="center" className={classes.container}>
-          <CreditInfo />
+        <Container maxWidth="lg" className={classes.container}>
+          <Grid container spacing={3}>
+            {/* Chart */}
+            <Grid item xs={12} md={8} lg={9}>
+              <Paper className={fixedHeightPaper}>
+                <Chart />
+              </Paper>
+            </Grid>
+            {/* Recent Deposits */}
+            <Grid item xs={12} md={4} lg={3}>
+              <Paper className={fixedHeightPaper}>
+                <Deposits />
+              </Paper>
+            </Grid>
+            {/* Recent Orders */}
+            <Grid item xs={12}>
+              <Paper className={classes.paper}>
+                <Orders />
+              </Paper>
+            </Grid>
+          </Grid>
         </Container>
         <MadeWithLove />
       </main>

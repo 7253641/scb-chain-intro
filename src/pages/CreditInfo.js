@@ -25,17 +25,18 @@ function ImgMediaCard() {
         alt="Contemplative Reptile"
         height="500"
         // width="1000"
-        image="/images/credit/Digital-Certificate-6.jpg"
+        image="/images/credit/Digital-Certificate-5.jpg"
         title=""
       />
+      授予：XXX
       <CardActions>
         <Button
           size="small"
           color="primary"
-          href="https://blockcerts.learningmachine.com/certificate/fe53b323df845641b74e8d3f6d175ea0"
+          href="https://blockcerts.learningmachine.com/certificate/c26d332a06175d2bb5a45403842d04c3"
           target="_blank"
         >
-          区块链证书ID：0xfe53b323df845641b74e8d3f6d175ea0
+          区块链证书ID：4b4b5aa4b0a1df5a00cd119e8e147e642
         </Button>
       </CardActions>
     </Card>

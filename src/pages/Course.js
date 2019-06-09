@@ -116,7 +116,8 @@ export default function Course() {
   const UserLink = props => <Link to="/User" {...props} />;
   const CourseLink = props => <Link to="/Course" {...props} />;
   const CreditLink = props => <Link to="/Credit" {...props} />;
-
+  const Steppers = props => <Link to="/Steppers" {...props} />;
+  const DashBoardLink = props => <Link to="/DashBoard" {...props} />;
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
@@ -191,19 +192,19 @@ export default function Course() {
               </ListItemIcon>
               <ListItemText primary="已选课程" />
             </ListItem>
-            <ListItem button>
+            <ListItem button component={Steppers}>
               <ListItemIcon>
                 <BarChartIcon />
               </ListItemIcon>
               <ListItemText primary="学习过程" />
             </ListItem>
-            <ListItem button button component={CreditLink}>
+            <ListItem button component={CreditLink}>
               <ListItemIcon>
                 <LayersIcon />
               </ListItemIcon>
               <ListItemText primary="证书认证" />
             </ListItem>
-            <ListItem>
+            <ListItem button component={DashBoardLink}>
               <ListItemIcon>
                 <DashboardIcon />
               </ListItemIcon>

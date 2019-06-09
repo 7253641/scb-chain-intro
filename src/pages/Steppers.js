@@ -14,6 +14,8 @@ import Container from "@material-ui/core/Container";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import NotificationsIcon from "@material-ui/icons/Notifications";
+// import { mainListItems, secondaryListItems, closeListItems } from "./listItems";
+import { mainListItems } from "./listItems";
 import MadeWithLove from "../components/MadeWithLove";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -25,7 +27,7 @@ import LayersIcon from "@material-ui/icons/Layers";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import CloseIcon from "@material-ui/icons/Close";
 import { Link } from "gatsby";
-import CreditInfo from "./CreditInfo";
+import SteppersInfo from "./SteppersInfo";
 
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
@@ -107,14 +109,13 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Credit() {
+export default function Course() {
   const HomeLink = props => <Link to="/" {...props} />;
   const UserLink = props => <Link to="/User" {...props} />;
   const CourseLink = props => <Link to="/Course" {...props} />;
   const CreditLink = props => <Link to="/Credit" {...props} />;
   const Steppers = props => <Link to="/Steppers" {...props} />;
   const DashBoardLink = props => <Link to="/DashBoard" {...props} />;
-
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
@@ -152,7 +153,7 @@ export default function Credit() {
             noWrap
             className={classes.title}
           >
-            证书认证
+            学习过程（建设中...）
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -220,8 +221,8 @@ export default function Credit() {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
-        <Container maxWidth="xl" justify="center" className={classes.container}>
-          <CreditInfo />
+        <Container maxWidth="xl" className={classes.container}>
+          <SteppersInfo />
         </Container>
         <MadeWithLove />
       </main>

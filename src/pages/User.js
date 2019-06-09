@@ -109,11 +109,13 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function SCBBCTopic() {
+export default function User() {
   const HomeLink = props => <Link to="/" {...props} />;
   const UserLink = props => <Link to="/User" {...props} />;
   const CourseLink = props => <Link to="/Course" {...props} />;
   const CreditLink = props => <Link to="/Credit" {...props} />;
+  const Steppers = props => <Link to="/Steppers" {...props} />;
+  const DashBoardLink = props => <Link to="/DashBoard" {...props} />;
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
@@ -188,7 +190,7 @@ export default function SCBBCTopic() {
               </ListItemIcon>
               <ListItemText primary="已选课程" />
             </ListItem>
-            <ListItem button>
+            <ListItem button component={Steppers}>
               <ListItemIcon>
                 <BarChartIcon />
               </ListItemIcon>
@@ -200,7 +202,7 @@ export default function SCBBCTopic() {
               </ListItemIcon>
               <ListItemText primary="证书认证" />
             </ListItem>
-            <ListItem>
+            <ListItem button component={DashBoardLink}>
               <ListItemIcon>
                 <DashboardIcon />
               </ListItemIcon>

@@ -11,50 +11,65 @@ import TableRow from "@material-ui/core/TableRow";
 import Title from "./Title";
 
 // Generate Order Data
-function createData(id, date, name, shipTo, paymentMethod, amount) {
-  return { id, date, name, shipTo, paymentMethod, amount };
+function createData(
+  id,
+  date,
+  name,
+  shipTo,
+  paymentMethod,
+  amount,
+  url,
+  credit
+) {
+  return { id, date, name, shipTo, paymentMethod, amount, url, credit };
 }
 
 const rows = [
   createData(
     0,
-    "16 Mar, 2019",
-    "Elvis Presley",
-    "Tupelo, MS",
-    "VISA ⠀•••• 3719",
-    312.44
+    "0x327be2c1",
+    "2019年3月15日",
+    "Blockchain",
+    "Understanding Its Uses and Implications",
+    "进行中",
+    "https://www.edx.org/course/understanding-blockchain-and-its-implications"
   ),
   createData(
     1,
-    "16 Mar, 2019",
-    "Paul McCartney",
-    "London, UK",
-    "VISA ⠀•••• 2574",
-    866.99
+    "0x327be2c2",
+    "2019年3月16日",
+    "Blockchain",
+    "An Introduction to Hyperledger Technologies",
+    "进行中",
+    "https://www.edx.org/course/blockchain-for-business-an-introduction-to-hyperledger-technologies"
   ),
   createData(
     2,
-    "16 Mar, 2019",
-    "Tom Scholz",
-    "Boston, MA",
-    "MC ⠀•••• 1253",
-    100.81
+    "0x327be2c4",
+    "2019年3月17日",
+    "Blockchain",
+    "Blockchain and FinTech: Basics, Applications, and Limitations",
+    "进行中",
+    "https://www.edx.org/course/blockchain-and-fintech-basics-applications-and-limitations"
   ),
   createData(
     3,
-    "16 Mar, 2019",
-    "Michael Jackson",
-    "Gary, IN",
-    "AMEX ⠀•••• 2000",
-    654.39
+    "0x327be2c5",
+    "2019年3月18日",
+    "FinTech",
+    "Introduction to FinTech",
+    "进行中",
+    "https://www.edx.org/course/introduction-to-fintech"
   ),
   createData(
     4,
-    "15 Mar, 2019",
-    "Bruce Springsteen",
-    "Long Branch, NJ",
-    "VISA ⠀•••• 5919",
-    212.79
+    "0x327be2c3",
+    "2019年3月16日",
+    "AI",
+    "Learning Machine",
+    "已发证",
+    "https://www.edx.org/course/machine-learning",
+    "/Credit"
   )
 ];
 
@@ -67,16 +82,17 @@ const useStyles = makeStyles(theme => ({
 export default function Orders() {
   const classes = useStyles();
   return (
-    <React.Fragment>
-      <Title>Recent Orders</Title>
+    <>
+      <Title>本周学习课程</Title>
       <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell>Date</TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell>Ship To</TableCell>
-            <TableCell>Payment Method</TableCell>
-            <TableCell align="right">Sale Amount</TableCell>
+            <TableCell>区块链课程ID</TableCell>
+            <TableCell>开课时间</TableCell>
+            <TableCell>课程分类</TableCell>
+            <TableCell>课程名称</TableCell>
+            <TableCell>状态</TableCell>
+            {/* <TableCell align="right">状态</TableCell> */}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -85,17 +101,32 @@ export default function Orders() {
               <TableCell>{row.date}</TableCell>
               <TableCell>{row.name}</TableCell>
               <TableCell>{row.shipTo}</TableCell>
-              <TableCell>{row.paymentMethod}</TableCell>
-              <TableCell align="right">{row.amount}</TableCell>
+              <TableCell
+                component={Link}
+                href={row.url}
+                target="_blank"
+                variant="inherit"
+              >
+                {row.paymentMethod}
+              </TableCell>
+              {/* <TableCell
+                component={Link}
+                href={row.credit}
+                target="_blank"
+                variant="inherit"
+              >
+                {row.amount}
+              </TableCell> */}
+              <TableCell>{row.amount}</TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
       <div className={classes.seeMore}>
         <Link color="primary" href="javascript:;">
-          See more orders
+          查看更多
         </Link>
       </div>
-    </React.Fragment>
+    </>
   );
 }
