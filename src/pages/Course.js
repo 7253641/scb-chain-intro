@@ -14,10 +14,9 @@ import Container from "@material-ui/core/Container";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-
-import UserInfo from "./UserInfo";
+// import { mainListItems, secondaryListItems, closeListItems } from "./listItems";
+import { mainListItems } from "./listItems";
 import MadeWithLove from "../components/MadeWithLove";
-
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -28,8 +27,11 @@ import LayersIcon from "@material-ui/icons/Layers";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import CloseIcon from "@material-ui/icons/Close";
 import { Link } from "gatsby";
-const drawerWidth = 240;
+import Grid from "@material-ui/core/Grid";
+import CourseInfoLFS170x from "./CourseInfo-LFS170x";
+import CourseInfoLFS171x from "./CourseInfo-LFS171x";
 
+const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex"
@@ -109,11 +111,12 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function SCBBCTopic() {
+export default function Course() {
   const HomeLink = props => <Link to="/" {...props} />;
   const UserLink = props => <Link to="/User" {...props} />;
   const CourseLink = props => <Link to="/Course" {...props} />;
   const CreditLink = props => <Link to="/Credit" {...props} />;
+
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
@@ -151,7 +154,7 @@ export default function SCBBCTopic() {
             noWrap
             className={classes.title}
           >
-            学生信息
+            已选课程
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -194,7 +197,7 @@ export default function SCBBCTopic() {
               </ListItemIcon>
               <ListItemText primary="学习过程" />
             </ListItem>
-            <ListItem button component={CreditLink}>
+            <ListItem button button component={CreditLink}>
               <ListItemIcon>
                 <LayersIcon />
               </ListItemIcon>
@@ -220,7 +223,7 @@ export default function SCBBCTopic() {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="xl" className={classes.container}>
-          <UserInfo />
+          <CourseInfoLFS170x />
         </Container>
         <MadeWithLove />
       </main>

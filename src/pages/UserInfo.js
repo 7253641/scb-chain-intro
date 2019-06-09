@@ -19,7 +19,7 @@ import FaceIcon from "@material-ui/icons/Face";
 import DoneIcon from "@material-ui/icons/Done";
 const useStyles = makeStyles(theme => ({
   card: {
-    maxWidth: 345
+    maxWidth: 370
   },
   chip: {
     margin: theme.spacing(0.5)
@@ -68,7 +68,7 @@ function RecipeReviewCard() {
           </IconButton>
         }
         title="XXX 注册日期：2019年6月9日"
-        subheader="区块链ID：0x9b948d24ab1d2a45"
+        subheader="区块链用户ID：0x9b948d24ab1d2a45"
       />
       {/* <CardMedia
         className={classes.media}

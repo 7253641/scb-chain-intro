@@ -11,20 +11,23 @@ import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import Badge from "@material-ui/core/Badge";
 import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import Link from "@material-ui/core/Link";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import { mainListItems, secondaryListItems, closeListItems } from "./listItems";
-import Chart from "./Chart";
-import Deposits from "./Deposits";
-import Orders from "./Orders";
 import MadeWithLove from "../components/MadeWithLove";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import DashboardIcon from "@material-ui/icons/Dashboard";
+import PeopleIcon from "@material-ui/icons/People";
+import BarChartIcon from "@material-ui/icons/BarChart";
+import LayersIcon from "@material-ui/icons/Layers";
+import AssignmentIcon from "@material-ui/icons/Assignment";
+import CloseIcon from "@material-ui/icons/Close";
+import { Link } from "gatsby";
+import CreditInfo from "./CreditInfo";
 
 const drawerWidth = 240;
-
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex"
@@ -104,7 +107,11 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function SCBBCTopic() {
+export default function Credit() {
+  const HomeLink = props => <Link to="/" {...props} />;
+  const UserLink = props => <Link to="/User" {...props} />;
+  const CourseLink = props => <Link to="/Course" {...props} />;
+
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
@@ -113,7 +120,7 @@ export default function SCBBCTopic() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  // const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
     <div className={classes.root}>
@@ -142,7 +149,7 @@ export default function SCBBCTopic() {
             noWrap
             className={classes.title}
           >
-            学分银行 + 区块链
+            证书认证
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -164,35 +171,54 @@ export default function SCBBCTopic() {
           </IconButton>
         </div>
         <Divider />
-        <List>{mainListItems}</List>
-        <Divider />
-        <List>{secondaryListItems}</List>
-        <Divider />
-        <List>{closeListItems}</List>
+        <List>
+          <div>
+            <ListItem button component={UserLink}>
+              <ListItemIcon>
+                <PeopleIcon />
+              </ListItemIcon>
+              <ListItemText primary="学生信息" />
+            </ListItem>
+
+            <ListItem button component={CourseLink}>
+              <ListItemIcon>
+                <AssignmentIcon />
+              </ListItemIcon>
+              <ListItemText primary="已选课程" />
+            </ListItem>
+            <ListItem button>
+              <ListItemIcon>
+                <BarChartIcon />
+              </ListItemIcon>
+              <ListItemText primary="学习过程" />
+            </ListItem>
+            <ListItem button>
+              <ListItemIcon>
+                <LayersIcon />
+              </ListItemIcon>
+              <ListItemText primary="证书认证" />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <DashboardIcon />
+              </ListItemIcon>
+              <ListItemText primary="数字仪表盘" />
+            </ListItem>
+
+            <Divider />
+            <ListItem button component={HomeLink}>
+              <ListItemIcon>
+                <CloseIcon />
+              </ListItemIcon>
+              <ListItemText primary="退出" />
+            </ListItem>
+          </div>
+        </List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
-        <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3}>
-            {/* Chart */}
-            <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-                <Chart />
-              </Paper>
-            </Grid>
-            {/* Recent Deposits */}
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-                <Deposits />
-              </Paper>
-            </Grid>
-            {/* Recent Orders */}
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                <Orders />
-              </Paper>
-            </Grid>
-          </Grid>
+        <Container maxWidth="xl" justify="center" className={classes.container}>
+          <CreditInfo />
         </Container>
         <MadeWithLove />
       </main>
