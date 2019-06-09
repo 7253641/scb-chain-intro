@@ -5,7 +5,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-
+import { Link } from "gatsby";
 const useStyles = makeStyles({
   card: {
     minWidth: 275
@@ -26,7 +26,7 @@ const useStyles = makeStyles({
 export default function BCWord() {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
-
+  const BCTopicsLink = props => <Link to="/bctopic" {...props} />;
   return (
     <Card className={classes.card}>
       <CardContent>
@@ -46,7 +46,9 @@ export default function BCWord() {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">了解更多</Button>
+        <Button size="small" component={BCTopicsLink}>
+          了解更多
+        </Button>
       </CardActions>
     </Card>
   );

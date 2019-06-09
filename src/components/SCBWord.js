@@ -27,7 +27,7 @@ export default function SCBWord() {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
   //{/* declare pathways */}
-  const TopicsLink = props => <Link to="/scbtopic" {...props} />;
+  const SCBTopicsLink = props => <Link to="/scbtopic" {...props} />;
   return (
     <Card className={classes.card}>
       <CardContent>
@@ -47,7 +47,7 @@ export default function SCBWord() {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" component={TopicsLink}>
+        <Button size="small" component={SCBTopicsLink}>
           了解更多
         </Button>
       </CardActions>

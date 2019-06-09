@@ -11,6 +11,7 @@
     "react": "latest",
     "react-dom": "latest",
     "react-helmet": "latest",
+    "recharts": "^1.6.2",
     "typeface-roboto": "0.0.54"
   },
   "scripts": {

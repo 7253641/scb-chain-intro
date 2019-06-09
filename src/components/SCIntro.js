@@ -83,6 +83,29 @@ function SCIntro() {
               <StarIcon />
             </ListItemIcon>
             <ListItemText
+              primary="对等网络"
+              secondary={
+                <>
+                  <Typography
+                    component="span"
+                    variant="body2"
+                    className={classes.inline}
+                    color="textPrimary"
+                  >
+                    区块链本质上是一个对等网络（peer-to-peer）的分布式账本数据库。
+                  </Typography>
+                  {/* {" — Do you have Paris recommendations? Have you ever…"} */}
+                </>
+              }
+            />
+          </ListItem>
+          <Divider variant="inset" component="li" />
+
+          <ListItem>
+            <ListItemIcon>
+              <StarIcon />
+            </ListItemIcon>
+            <ListItemText
               primary="非对称加密"
               secondary={
                 <>
@@ -92,7 +115,7 @@ function SCIntro() {
                     className={classes.inline}
                     color="textPrimary"
                   >
-                    即在加密和解密的过程中使用一个“密钥对”，“密钥对”中的两个密钥具有非对称的特点，即在信息发送过程中，发送方通过一把密钥将信息加密，接收方在收到信息后，只有通过配对的另一把密钥才能对信息进行解密。非对称加密使得任何参与者更容易达成共识，将价值交换中的摩擦边界降到最低，还能实现透明数据后的匿名性，保护个人隐私。
+                    在加密和解密的过程中使用一个“密钥对”，“密钥对”中的两个密钥具有非对称的特点。在信息发送过程中，发送方通过一把密钥将信息加密，接收方在收到信息后，只有通过配对的另一把密钥才能对信息进行解密。非对称加密使得任何参与者更容易达成共识，将价值交换中的摩擦边界降到最低，还能实现透明数据后的匿名性，保护个人隐私。
                   </Typography>
                   {/* {" — Wish I could come, but I'm out of town this…"} */}
                 </>
@@ -114,7 +137,7 @@ function SCIntro() {
                     className={classes.inline}
                     color="textPrimary"
                   >
-                    区块的链的结构是由创世区块（第一个区块）向后通过区块之间的指针进行连接，这个指针使用的就是哈希指针.每个区块中都存储了前一个区块的哈希指针。这样的数据结构的好处在于后面区块可以查找前面所有区块中的信息且区块的哈希指针的计算包含了前面区块的信息，从而一定程度上保证了区块链的不易篡改的特性。
+                    区块的链的结构是由创世区块（第一个区块）向后通过区块之间的指针进行连接，这个指针使用的就是哈希签名。每个区块中都存储了前一个区块的哈希签名。这样的数据结构的好处在于后面区块可以查找前面所有区块中的信息且区块的哈希签名的计算包含了前面区块的信息，从而一定程度上保证了区块链的不易篡改的特性。
                   </Typography>
                   {/* {" — Do you have Paris recommendations? Have you ever…"} */}
                 </>
@@ -159,29 +182,6 @@ function SCIntro() {
                     color="textPrimary"
                   >
                     简单地说，智能合约就是传统合约的数字化版本。它们是在区块链数据库上运行的计算机程序，可以在满足其源代码中写入的条件时自行执行。智能合约一旦编写好就可以被用户信赖，合约条款不能被改变，因此合约是不可更改的。
-                  </Typography>
-                  {/* {" — Do you have Paris recommendations? Have you ever…"} */}
-                </>
-              }
-            />
-          </ListItem>
-          <Divider variant="inset" component="li" />
-
-          <ListItem>
-            <ListItemIcon>
-              <StarIcon />
-            </ListItemIcon>
-            <ListItemText
-              primary="匿名性"
-              secondary={
-                <>
-                  <Typography
-                    component="span"
-                    variant="body2"
-                    className={classes.inline}
-                    color="textPrimary"
-                  >
-                    除非有法律规范要求，单从技术上来讲，各区块节点的身份信息不需要公开或验证，信息传递可以匿名进行。
                   </Typography>
                   {/* {" — Do you have Paris recommendations? Have you ever…"} */}
                 </>

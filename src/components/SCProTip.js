@@ -27,7 +27,7 @@ export default function ProTip() {
   return (
     <Typography className={classes.root} color="textPrimary">
       <LightBulbIcon className={classes.lightBulb} />
-      区块链是一种把区块以链的方式组合在一起的数据结构，它适合存储简单的、有先后关系的、能在系统内验证的数据，用密码学保证了数据的不可篡改和不可伪造。它能够使参与者对全网交易记录的事件顺序和当前状态建立共识。
+      区块链是一种把区块以链的方式组合在一起的数据结构，它适合存储有先后顺序的、能在系统内验证的数据。它用密码学保证了数据的不可篡改和不可伪造。它基于对等网络技术在全网同步数据。它能够使参与者对全网交易记录的事件顺序和当前状态建立共识。它可以运行智能合约代码在参与者间完成可信的、可靠的、自动化执行的价值转移。
     </Typography>
   );
 }

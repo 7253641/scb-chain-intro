@@ -5,7 +5,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-
+import { Link } from "gatsby";
 const useStyles = makeStyles({
   card: {
     minWidth: 275
@@ -26,7 +26,7 @@ const useStyles = makeStyles({
 export default function BCPWord() {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
-
+  const BCPTopicsLink = props => <Link to="/bcptopic" {...props} />;
   return (
     <Card className={classes.card}>
       <CardContent>
@@ -37,7 +37,7 @@ export default function BCPWord() {
           区块链 +
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          Block Chain
+          Block Chain +
         </Typography>
         <Typography variant="body2" component="p">
           区块链 +
@@ -48,7 +48,9 @@ export default function BCPWord() {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">了解更多</Button>
+        <Button size="small" component={BCPTopicsLink}>
+          了解更多
+        </Button>
       </CardActions>
     </Card>
   );
